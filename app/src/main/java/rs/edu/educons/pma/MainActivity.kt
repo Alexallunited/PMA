@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import rs.edu.educons.pma.Models.ChuckNorrisJoke
 import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
+import android.widget.EditText
 import rs.edu.educons.pma.Helper.Helper
 
 class MainActivity : AppCompatActivity() {
@@ -30,6 +31,10 @@ class MainActivity : AppCompatActivity() {
         mediaPlayer?.setOnPreparedListener{
         }
         */
+        val editTextIme = findViewById<EditText>(R.id.editTextIme)
+        val editTextPrezime = findViewById<EditText>(R.id.editTextPrezime)
+
+
         btnJoke.setOnClickListener{
             val mediaPlayer = MediaPlayer.create(this, R.raw.chuck_norris)
             mediaPlayer.start()
@@ -45,7 +50,14 @@ class MainActivity : AppCompatActivity() {
 
                 override fun doInBackground(vararg params: String?): String {
                     val helper = Helper()
-                    return helper.getHTTPData("https://api.icndb.com/jokes/random")
+                    //https://api.icndb.com/jokes/random?firstName=Aleksandar&lastName=Trajkovic
+                    val url1: String = "https://api.icndb.com/jokes/random?firstName="
+                    val first: String = editTextIme.text.toString()
+                    val url2: String ="&lastName="
+                    val second: String = editTextPrezime.text.toString()
+                    val konacniString: String = url1 + first + url2 + second
+
+                        return helper.getHTTPData(konacniString)
                 }
 
                 override fun onPostExecute(result: String?) {

@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">PMA</string>
     <string name="joke">Klikni za Šalu</string>
+    <string name="hint_ime">Unesite ime</string>
+    <string name="hint_prezime">Unesite prezime</string>
+
 </resources>

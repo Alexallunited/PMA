@@ -33,5 +33,24 @@
         android:text="@string/joke"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
+    <EditText
+        android:id="@+id/editTextIme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="76dp"
+        android:hint="@string/hint_ime" />
+
+    <EditText
+        android:id="@+id/editTextPrezime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="31dp"
+        android:hint="@string/hint_prezime" />
+
 
 </RelativeLayout>
