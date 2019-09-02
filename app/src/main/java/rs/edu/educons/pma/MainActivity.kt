@@ -18,19 +18,14 @@ import rs.edu.educons.pma.Helper.Helper
 
 class MainActivity : AppCompatActivity() {
 
-    //private var mediaPlayer: MediaPlayer? = null
+
     var sp : SoundPool? = null //istraziti kako se koristi
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP) //mora da stoji @TargetApi inace koristi API level 1 iz nekog razloga (Moze da stoji i @RequireApi)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        /*
-        //mediaPlayer (zavrsiti kasnije)
-        mediaPlayer = MediaPlayer.create(this, R.raw.Chuck_Norris)
-        mediaPlayer?.setOnPreparedListener{
-        }
-        */
+
         val editTextIme = findViewById<EditText>(R.id.editTextIme)
         val editTextPrezime = findViewById<EditText>(R.id.editTextPrezime)
 
@@ -51,9 +46,9 @@ class MainActivity : AppCompatActivity() {
                 override fun doInBackground(vararg params: String?): String {
                     val helper = Helper()
                     //https://api.icndb.com/jokes/random?firstName=Aleksandar&lastName=Trajkovic
-                    val url1: String = "https://api.icndb.com/jokes/random?firstName="
+                    val url1 = "https://api.icndb.com/jokes/random?firstName="
                     val first: String = editTextIme.text.toString()
-                    val url2: String ="&lastName="
+                    val url2 ="&lastName="
                     val second: String = editTextPrezime.text.toString()
                     val konacniString: String = url1 + first + url2 + second
 
